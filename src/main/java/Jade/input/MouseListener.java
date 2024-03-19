@@ -1,4 +1,4 @@
-package Jade;
+package Jade.input;
 
 import java.util.Arrays;
 
@@ -27,12 +27,12 @@ public class MouseListener
   
   public static MouseListener get()
   {
-    if (MouseListener.instance == null)
+    if (instance == null)
     {
-      MouseListener.instance = new MouseListener();
+      instance = new MouseListener();
     }
     
-    return MouseListener.instance;
+    return instance;
   }
   
   public static void mousePosCallback(long window, double xpos, double ypos)

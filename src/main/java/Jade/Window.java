@@ -1,5 +1,7 @@
 package Jade;
 
+import Jade.input.KeyListener;
+import Jade.input.MouseListener;
 import org.lwjgl.Version;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.opengl.GL;
@@ -20,8 +22,8 @@ public class Window
   
   private Window()
   {
-    this.width = 1920;
-    this.height = 1080;
+    this.width = 960;
+    this.height = 540;
     this.title = "Mario";
   }
   
@@ -62,11 +64,6 @@ public class Window
       throw new IllegalStateException("Unable to initialize GLFW");
     }
     
-    // Register MouseListener callbacks
-    glfwSetCursorPosCallback(glfwWindow, MouseListener::mousePosCallback);
-    glfwSetMouseButtonCallback(glfwWindow, MouseListener::mouseButtonCallback);
-    glfwSetScrollCallback(glfwWindow, MouseListener::mouseScrollCallback);
-    
     // Configure GLFW
     glfwDefaultWindowHints();
     glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
@@ -80,6 +77,12 @@ public class Window
     {
       throw new IllegalStateException("Failed to crete the GLFW window");
     }
+    
+    // Register input callbacks
+    glfwSetCursorPosCallback(glfwWindow, MouseListener::mousePosCallback);
+    glfwSetMouseButtonCallback(glfwWindow, MouseListener::mouseButtonCallback);
+    glfwSetScrollCallback(glfwWindow, MouseListener::mouseScrollCallback);
+    glfwSetKeyCallback(glfwWindow, KeyListener::keyCallback);
     
     // Make the OpenGL context current
     glfwMakeContextCurrent(glfwWindow);
@@ -100,6 +103,12 @@ public class Window
       
       glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
       glClear(GL_COLOR_BUFFER_BIT);
+      
+      if (KeyListener.isKeyPressed(GLFW_KEY_SPACE))
+      {
+        System.out.println("Space key pressed");
+      }
+      
       glfwSwapBuffers(glfwWindow);
     }
   }
