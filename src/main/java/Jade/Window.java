@@ -14,25 +14,29 @@ public class Window
 {
   private int width, height;
   private String title;
-  private long glfwWindow;
+  private long   glfwWindow;
   
   private static Window window = null;
   
-  private Window() {
+  private Window()
+  {
     this.width = 1920;
     this.height = 1080;
     this.title = "Mario";
   }
   
-  public static Window get() {
-    if (Window.window == null) {
+  public static Window get()
+  {
+    if (Window.window == null)
+    {
       Window.window = new Window();
     }
     
     return Window.window;
   }
   
-  public void run() {
+  public void run()
+  {
     System.out.println("Hello LWJGL " + Version.getVersion() + "!");
     
     init();
@@ -47,14 +51,21 @@ public class Window
     glfwSetErrorCallback(null).free();
   }
   
-  private void init() {
+  private void init()
+  {
     // Setup an error callback
     GLFWErrorCallback.createPrint(System.err).set();
     
     // Initialize GLFW
-    if (!glfwInit()) {
+    if (!glfwInit())
+    {
       throw new IllegalStateException("Unable to initialize GLFW");
     }
+    
+    // Register MouseListener callbacks
+    glfwSetCursorPosCallback(glfwWindow, MouseListener::mousePosCallback);
+    glfwSetMouseButtonCallback(glfwWindow, MouseListener::mouseButtonCallback);
+    glfwSetScrollCallback(glfwWindow, MouseListener::mouseScrollCallback);
     
     // Configure GLFW
     glfwDefaultWindowHints();
@@ -65,7 +76,8 @@ public class Window
     // Create the window
     glfwWindow = glfwCreateWindow(width, height, title, NULL, NULL);
     
-    if (glfwWindow == NULL) {
+    if (glfwWindow == NULL)
+    {
       throw new IllegalStateException("Failed to crete the GLFW window");
     }
     
@@ -80,8 +92,10 @@ public class Window
     GL.createCapabilities();
   }
   
-  private void loop() {
-    while (!glfwWindowShouldClose(glfwWindow)) {
+  private void loop()
+  {
+    while (!glfwWindowShouldClose(glfwWindow))
+    {
       glfwPollEvents();
       
       glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
