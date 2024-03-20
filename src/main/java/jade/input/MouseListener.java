@@ -1,4 +1,4 @@
-package Jade.input;
+package jade.input;
 
 import java.util.Arrays;
 

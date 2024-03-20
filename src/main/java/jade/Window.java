@@ -1,7 +1,8 @@
-package Jade;
+package jade;
 
-import Jade.input.KeyListener;
-import Jade.input.MouseListener;
+import jade.input.KeyListener;
+import jade.input.MouseListener;
+import jade.util.Time;
 import org.lwjgl.Version;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.opengl.GL;
@@ -14,17 +15,41 @@ import static org.lwjgl.system.MemoryUtil.NULL;
 
 public class Window
 {
-  private int width, height;
+  private int    width;
+  private int    height;
   private String title;
   private long   glfwWindow;
   
-  private static Window window = null;
+  private static Window window       = null;
+  private static Scene  currentScene = null;
+  
+  public float r = 1.0f;
+  public float g = 1.0f;
+  public float b = 1.0f;
+  public float a = 1.0f;
   
   private Window()
   {
     this.width = 960;
     this.height = 540;
     this.title = "Mario";
+  }
+  
+  public static void changeScene(int newScene)
+  {
+    switch (newScene)
+    {
+      case 0:
+        currentScene = new LevelEditorScene();
+//        currentScene.inti();
+        break;
+      case 1:
+        currentScene = new LevelScene();
+//        currentScene.init();
+      default:
+        assert false : "Unknown scene '" + newScene + "'";
+        break;
+    }
   }
   
   public static Window get()
@@ -42,6 +67,7 @@ public class Window
     System.out.println("Hello LWJGL " + Version.getVersion() + "!");
     
     init();
+    changeScene(0);
     loop();
     
     // Free the memory
@@ -97,19 +123,27 @@ public class Window
   
   private void loop()
   {
+    float beginTime = Time.getTime();
+    float endTime   = Time.getTime();
+    float dt        = -1.0f;
+    
     while (!glfwWindowShouldClose(glfwWindow))
     {
       glfwPollEvents();
       
-      glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
+      glClearColor(r, g, b, a);
       glClear(GL_COLOR_BUFFER_BIT);
       
-      if (KeyListener.isKeyPressed(GLFW_KEY_SPACE))
+      if (dt > 0)
       {
-        System.out.println("Space key pressed");
+        currentScene.update(dt);
       }
       
       glfwSwapBuffers(glfwWindow);
+      
+      endTime = Time.getTime();
+      dt = endTime - beginTime;
+      beginTime = endTime;
     }
   }
 }
