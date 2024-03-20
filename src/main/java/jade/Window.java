@@ -41,11 +41,11 @@ public class Window
     {
       case 0:
         currentScene = new LevelEditorScene();
-//        currentScene.inti();
+        currentScene.init();
         break;
       case 1:
         currentScene = new LevelScene();
-//        currentScene.init();
+        currentScene.init();
       default:
         assert false : "Unknown scene '" + newScene + "'";
         break;
@@ -124,7 +124,7 @@ public class Window
   private void loop()
   {
     float beginTime = Time.getTime();
-    float endTime   = Time.getTime();
+    float endTime;
     float dt        = -1.0f;
     
     while (!glfwWindowShouldClose(glfwWindow))
@@ -134,7 +134,7 @@ public class Window
       glClearColor(r, g, b, a);
       glClear(GL_COLOR_BUFFER_BIT);
       
-      if (dt > 0)
+      if (dt >= 0)
       {
         currentScene.update(dt);
       }
