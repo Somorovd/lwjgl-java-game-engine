@@ -1,6 +1,8 @@
 package jade;
 
 import jade.renderer.Shader;
+import jade.util.Time;
+import org.joml.Vector2f;
 import org.lwjgl.BufferUtils;
 
 import java.nio.FloatBuffer;
@@ -21,10 +23,10 @@ public class LevelEditorScene extends Scene
   //@formatter:off
   private float[] vertexArray = {
     // position           // color
-    -0.5f,  0.5f, 0.0f,    1.0f, 0.0f, 0.0f, 1.0f, // Top left
-     0.5f,  0.5f, 0.0f,    0.0f, 0.0f, 1.0f, 1.0f, // Top right
-     0.5f, -0.5f, 0.0f,    0.0f, 0.0f, 0.0f, 1.0f, // Bottom right
-    -0.5f, -0.5f, 0.0f,    0.0f, 1.0f, 0.0f, 1.0f  // Bottom left
+      0.0f, 100.0f, 0.0f,    1.0f, 0.0f, 0.0f, 1.0f, // Top left
+    100.0f, 100.0f, 0.0f,    0.0f, 0.0f, 1.0f, 1.0f, // Top right
+    100.0f,   0.0f, 0.0f,    0.0f, 0.0f, 0.0f, 1.0f, // Bottom right
+      0.0f,   0.0f, 0.0f,    0.0f, 1.0f, 0.0f, 1.0f  // Bottom left
   };
   
   // IMPORTANT: define tris in CCW order
@@ -40,6 +42,7 @@ public class LevelEditorScene extends Scene
   @Override
   public void init()
   {
+    camera        = new Camera(new Vector2f());
     defaultShader = new Shader("assets/shaders/default.glsl");
     defaultShader.compile();
     
@@ -79,6 +82,11 @@ public class LevelEditorScene extends Scene
   public void update(float dt)
   {
     defaultShader.use();
+    
+    defaultShader.uploadMat4f("uProjMat", camera.getProjectionMatrix());
+    defaultShader.uploadMat4f("uViewMat", camera.getViewMatrix());
+    defaultShader.uploadFloat("uTime", Time.getTime());
+    
     glBindVertexArray(vaoId);
     glEnableVertexAttribArray(0);
     glEnableVertexAttribArray(1);

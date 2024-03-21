@@ -30,9 +30,9 @@ public class Window
   
   private Window()
   {
-    this.width = 960;
+    this.width  = 960;
     this.height = 540;
-    this.title = "Mario";
+    this.title  = "Mario";
   }
   
   public static void changeScene(int newScene)
@@ -141,8 +141,8 @@ public class Window
       
       glfwSwapBuffers(glfwWindow);
       
-      endTime = Time.getTime();
-      dt = endTime - beginTime;
+      endTime   = Time.getTime();
+      dt        = endTime - beginTime;
       beginTime = endTime;
     }
   }

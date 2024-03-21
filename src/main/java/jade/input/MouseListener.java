@@ -19,10 +19,10 @@ public class MouseListener
   {
     this.scrollX = 0.0;
     this.scrollY = 0.0;
-    this.posX = 0.0;
-    this.posY = 0.0;
-    this.lastX = 0.0;
-    this.lastY = 0.0;
+    this.posX    = 0.0;
+    this.posY    = 0.0;
+    this.lastX   = 0.0;
+    this.lastY   = 0.0;
   }
   
   public static MouseListener get()
@@ -38,10 +38,10 @@ public class MouseListener
   public static void mousePosCallback(long window, double xpos, double ypos)
   {
     MouseListener ml = get();
-    ml.lastX = ml.posX;
-    ml.lastY = ml.posY;
-    ml.posX = xpos;
-    ml.posY = ypos;
+    ml.lastX      = ml.posX;
+    ml.lastY      = ml.posY;
+    ml.posX       = xpos;
+    ml.posY       = ypos;
     ml.isDragging = Arrays.asList(ml.mouseButtonPressed).contains(true);
   }
   
@@ -59,7 +59,7 @@ public class MouseListener
     else if (action == GLFW_RELEASE)
     {
       ml.mouseButtonPressed[button] = false;
-      ml.isDragging = false;
+      ml.isDragging                 = false;
     }
   }
   
@@ -75,8 +75,8 @@ public class MouseListener
     MouseListener ml = get();
     ml.scrollX = 0;
     ml.scrollY = 0;
-    ml.lastX = ml.posX;
-    ml.lastY = ml.posY;
+    ml.lastX   = ml.posX;
+    ml.lastY   = ml.posY;
   }
   
   public static float getX()
