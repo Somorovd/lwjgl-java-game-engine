@@ -8,13 +8,25 @@ import java.util.List;
 
 public class GameObject
 {
-  private String name;
+  public Transform transform;
   
+  private String          name;
   private List<Component> components;
   
   public GameObject(String name)
   {
+    init(name, new Transform());
+  }
+  
+  public GameObject(String name, Transform transform)
+  {
+    init(name, transform);
+  }
+  
+  private void init(String name, Transform transform)
+  {
     this.name       = name;
+    this.transform  = transform;
     this.components = new ArrayList<>();
   }
   
