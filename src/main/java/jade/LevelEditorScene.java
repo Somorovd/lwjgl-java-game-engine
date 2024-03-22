@@ -1,5 +1,6 @@
 package jade;
 
+import jade.components.SpriteRenderer;
 import jade.renderer.Shader;
 import jade.renderer.Texture;
 import jade.util.Time;
@@ -16,11 +17,12 @@ import static org.lwjgl.opengl.GL30.glGenVertexArrays;
 
 public class LevelEditorScene extends Scene
 {
-  private int     vaoId;
-  private int     vboId;
-  private int     eboId;
-  private Shader  defaultShader;
-  private Texture testTexture;
+  private int        vaoId;
+  private int        vboId;
+  private int        eboId;
+  private Shader     defaultShader;
+  private Texture    testTexture;
+  private GameObject testGameObject;
   
   //@formatter:off
   private float[] vertexArray = {
@@ -47,8 +49,11 @@ public class LevelEditorScene extends Scene
     camera        = new Camera(new Vector2f());
     defaultShader = new Shader("assets/shaders/default.glsl");
     testTexture   = new Texture("assets/images/test-image.png");
-    
     defaultShader.compile();
+    
+    testGameObject = new GameObject("test object");
+    testGameObject.addComponent(new SpriteRenderer());
+    this.addGameObject(testGameObject);
     
     // ===================================
     // Generate VAO, VBO, EBO
@@ -111,5 +116,10 @@ public class LevelEditorScene extends Scene
     glDisableVertexAttribArray(1);
     glBindVertexArray(0);
     defaultShader.detach();
+    
+    for (GameObject go : gameObjects)
+    {
+      go.update(dt);
+    }
   }
 }

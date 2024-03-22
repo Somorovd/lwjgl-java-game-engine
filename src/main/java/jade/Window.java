@@ -15,18 +15,16 @@ import static org.lwjgl.system.MemoryUtil.NULL;
 
 public class Window
 {
-  private int    width;
-  private int    height;
-  private String title;
-  private long   glfwWindow;
-  
   private static Window window       = null;
   private static Scene  currentScene = null;
-  
-  public float r = 1.0f;
-  public float g = 1.0f;
-  public float b = 1.0f;
-  public float a = 1.0f;
+  public         float  r            = 1.0f;
+  public         float  g            = 1.0f;
+  public         float  b            = 1.0f;
+  public         float  a            = 1.0f;
+  private        int    width;
+  private        int    height;
+  private        String title;
+  private        long   glfwWindow;
   
   private Window()
   {
@@ -41,15 +39,15 @@ public class Window
     {
       case 0:
         currentScene = new LevelEditorScene();
-        currentScene.init();
         break;
       case 1:
         currentScene = new LevelScene();
-        currentScene.init();
       default:
         assert false : "Unknown scene '" + newScene + "'";
         break;
     }
+    currentScene.init();
+    currentScene.start();
   }
   
   public static Window get()
