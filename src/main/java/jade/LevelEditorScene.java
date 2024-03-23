@@ -35,7 +35,8 @@ public class LevelEditorScene extends Scene
       new Transform(
         new Vector2f(0, 0),
         new Vector2f(256, 256)
-      )
+      ),
+      -1
     );
     obj1.addComponent(
       new SpriteRenderer(sprites.getSprite(0))

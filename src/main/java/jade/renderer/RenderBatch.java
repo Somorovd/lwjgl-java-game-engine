@@ -17,7 +17,7 @@ import static org.lwjgl.opengl.GL30.glBindVertexArray;
 import static org.lwjgl.opengl.GL30.glGenVertexArrays;
 
 
-public class RenderBatch
+public class RenderBatch implements Comparable<RenderBatch>
 {
   /*
     Vertex Array
@@ -49,10 +49,12 @@ public class RenderBatch
   private Shader           shader;
   private List<Texture>    textures;
   private int[]            texSlots = {0, 1, 2, 3, 4, 5, 6, 7};
+  private int              zIndex;
   
-  public RenderBatch(int maxBatchSize)
+  public RenderBatch(int maxBatchSize, int zIndex)
   {
     this.maxBatchSize = maxBatchSize;
+    this.zIndex       = zIndex;
     this.numSprites   = 0;
     this.hasRoom      = true;
     this.sprites      = new SpriteRenderer[maxBatchSize];
@@ -249,5 +251,13 @@ public class RenderBatch
   public boolean hasTexture(Texture tex)
   {
     return textures.contains(tex);
+  }
+  
+  public int getzIndex() {return zIndex;}
+  
+  @Override
+  public int compareTo(RenderBatch o)
+  {
+    return zIndex - o.getzIndex();
   }
 }

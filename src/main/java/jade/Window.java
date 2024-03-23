@@ -121,6 +121,9 @@ public class Window
     
     // critical for LWJGL to work with GLFW
     GL.createCapabilities();
+    
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
   }
   
   private void loop()
