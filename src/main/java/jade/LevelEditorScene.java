@@ -1,6 +1,7 @@
 package jade;
 
 import jade.components.SpriteRenderer;
+import jade.components.SpriteSheet;
 import jade.util.AssetPool;
 import org.joml.Vector2f;
 
@@ -12,12 +13,20 @@ public class LevelEditorScene extends Scene
   private void loadResources()
   {
     AssetPool.getShader("assets/shaders/default.glsl");
+    AssetPool.addSpriteSheet(
+      "assets/images/spritesheet.png",
+      new SpriteSheet(AssetPool.getTexture("assets/images/spritesheet.png"), 16, 16, 26, 0)
+    );
   }
   
   @Override
   public void init()
   {
+    loadResources();
+    
     camera = new Camera(new Vector2f());
+    
+    SpriteSheet sprites = AssetPool.getSpritesheet("assets/images/spritesheet.png");
     
     GameObject obj1 = new GameObject(
       "Object 1",
@@ -27,11 +36,9 @@ public class LevelEditorScene extends Scene
       )
     );
     obj1.addComponent(
-      new SpriteRenderer(AssetPool.getTexture("assets/images/test-image.png"))
+      new SpriteRenderer(sprites.getSprite(0))
     );
     this.addGameObjectToScene(obj1);
-    
-    loadResources();
   }
   
   @Override
