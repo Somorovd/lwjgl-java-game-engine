@@ -34,9 +34,17 @@ public class Renderer
     {
       if (batch.hasRoom())
       {
-        batch.addSprite(spr);
-        added = true;
-        break;
+        Texture tex = spr.getTexture();
+        
+        if (
+          tex == null ||
+            (batch.hasTexture(tex) || batch.hasTextureRoom())
+        )
+        {
+          batch.addSprite(spr);
+          added = true;
+          break;
+        }
       }
     }
     
