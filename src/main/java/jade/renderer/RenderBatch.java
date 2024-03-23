@@ -4,6 +4,7 @@ import jade.Camera;
 import jade.Transform;
 import jade.Window;
 import jade.components.SpriteRenderer;
+import jade.util.AssetPool;
 import org.joml.Vector4f;
 
 import static org.lwjgl.opengl.GL15.*;
@@ -49,7 +50,7 @@ public class RenderBatch
     this.hasRoom      = true;
     this.sprites      = new SpriteRenderer[maxBatchSize];
     this.vertices     = new float[maxBatchSize * 4 * VERTEX_SIZE];
-    this.shader       = new Shader("assets/shaders/default.glsl");
+    this.shader       = AssetPool.getShader("assets/shaders/default.glsl");
     
     shader.compile();
   }
