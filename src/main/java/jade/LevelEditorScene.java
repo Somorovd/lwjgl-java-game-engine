@@ -8,6 +8,8 @@ import org.joml.Vector2f;
 
 public class LevelEditorScene extends Scene
 {
+  private GameObject obj1;
+  
   public LevelEditorScene() {}
   
   private void loadResources()
@@ -28,7 +30,7 @@ public class LevelEditorScene extends Scene
     
     SpriteSheet sprites = AssetPool.getSpritesheet("assets/images/spritesheet.png");
     
-    GameObject obj1 = new GameObject(
+    obj1 = new GameObject(
       "Object 1",
       new Transform(
         new Vector2f(0, 0),
@@ -45,6 +47,9 @@ public class LevelEditorScene extends Scene
   public void update(float dt)
   {
     System.out.println("FPS" + 1.0f / dt);
+    
+    obj1.transform.position.x += 10 * dt;
+    
     for (GameObject go : gameObjects)
     {
       go.update(dt);
