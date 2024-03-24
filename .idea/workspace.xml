@@ -6,13 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="0568a008-4b3f-43bc-b9c4-6f9375b4119d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jade/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jade/ImGui/ImGuiLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/ImGui/ImGuiLayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jade/LevelEditorScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/LevelEditorScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jade/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/Scene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jade/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/Window.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jade/components/Component.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/components/Component.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jade/components/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/components/Sprite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jade/components/SpriteRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/components/SpriteRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jade/components/SpriteSheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/components/SpriteSheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jade/renderer/Texture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/renderer/Texture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jade/util/AssetPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/util/AssetPool.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -16,7 +16,9 @@ public class Texture
   private int    width;
   private int    height;
   
-  public Texture(String filepath)
+  public Texture() {}
+  
+  public void init(String filepath)
   {
     this.filepath = filepath;
     

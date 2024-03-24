@@ -1,9 +1,12 @@
 package jade;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import jade.components.SpriteRenderer;
 import jade.components.SpriteSheet;
 import jade.util.AssetPool;
 import org.joml.Vector2f;
+import org.joml.Vector4f;
 
 
 public class LevelEditorScene extends Scene
@@ -38,11 +41,18 @@ public class LevelEditorScene extends Scene
       ),
       -1
     );
-    obj1.addComponent(
-      new SpriteRenderer(sprites.getSprite(0))
-    );
+    SpriteRenderer obj1Sprite = new SpriteRenderer();
+    obj1Sprite.setColor(new Vector4f(1, 0, 0, 1));
+    obj1.addComponent(new SpriteRenderer());
+    
     addGameObjectToScene(obj1);
     activeGameObject = obj1;
+    
+    Gson gson = new GsonBuilder()
+      .setPrettyPrinting()
+      .create();
+    
+    System.out.println(gson.toJson(obj1Sprite));
   }
   
   @Override

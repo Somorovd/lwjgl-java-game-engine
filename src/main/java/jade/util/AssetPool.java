@@ -35,7 +35,8 @@ public class AssetPool
     String path = file.getAbsolutePath();
     if (!textures.containsKey(path))
     {
-      Texture texture = new Texture(resourceName);
+      Texture texture = new Texture();
+      texture.init(resourceName);
       textures.put(path, texture);
     }
     
