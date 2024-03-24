@@ -1,6 +1,6 @@
 package jade;
 
-import jade.ImGui.ImGuiLayer;
+import jade.imgui.ImGuiLayer;
 import jade.input.KeyListener;
 import jade.input.MouseListener;
 import org.lwjgl.Version;
@@ -48,6 +48,7 @@ public class Window
         assert false : "Unknown scene '" + newScene + "'";
         break;
     }
+    currentScene.load();
     currentScene.init();
     currentScene.start();
   }
@@ -141,7 +142,6 @@ public class Window
     float endTime;
     float dt        = -1.0f;
     
-    currentScene.load();
     while (!glfwWindowShouldClose(glfwWindow))
     {
       glfwPollEvents();

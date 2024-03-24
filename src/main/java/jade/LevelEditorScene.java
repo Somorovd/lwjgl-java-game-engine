@@ -1,5 +1,6 @@
 package jade;
 
+import jade.components.GuiTestComponent;
 import jade.components.SpriteRenderer;
 import jade.components.SpriteSheet;
 import jade.util.AssetPool;
@@ -30,6 +31,7 @@ public class LevelEditorScene extends Scene
     
     if (levelLoaded)
     {
+      activeGameObject = gameObjects.get(0);
       return;
     }
     
@@ -46,6 +48,7 @@ public class LevelEditorScene extends Scene
     SpriteRenderer obj1Sprite = new SpriteRenderer();
     obj1Sprite.setColor(new Vector4f(1, 0, 0, 1));
     obj1.addComponent(new SpriteRenderer());
+    obj1.addComponent(new GuiTestComponent());
     
     addGameObjectToScene(obj1);
     activeGameObject = obj1;
@@ -54,8 +57,6 @@ public class LevelEditorScene extends Scene
   @Override
   public void update(float dt)
   {
-    obj1.transform.position.x += 10 * dt;
-    
     for (GameObject go : gameObjects)
     {
       go.update(dt);

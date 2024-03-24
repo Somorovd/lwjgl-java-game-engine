@@ -1,4 +1,4 @@
-package jade.ImGui;
+package jade.imgui;
 
 import imgui.ImFontAtlas;
 import imgui.ImFontConfig;
