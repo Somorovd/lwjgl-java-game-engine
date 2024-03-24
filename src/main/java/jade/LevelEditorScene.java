@@ -47,8 +47,6 @@ public class LevelEditorScene extends Scene
   @Override
   public void update(float dt)
   {
-    System.out.println("FPS" + 1.0f / dt);
-    
     obj1.transform.position.x += 10 * dt;
     
     for (GameObject go : gameObjects)

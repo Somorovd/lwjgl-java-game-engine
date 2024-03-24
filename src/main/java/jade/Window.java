@@ -1,5 +1,6 @@
 package jade;
 
+import jade.ImGui.ImGuiLayer;
 import jade.input.KeyListener;
 import jade.input.MouseListener;
 import org.lwjgl.Version;
@@ -23,7 +24,9 @@ public class Window
   private        int    width;
   private        int    height;
   private        String title;
-  private        long   glfwWindow;
+  
+  private long       glfwWindow;
+  private ImGuiLayer imGuiLayer;
   
   private Window()
   {
@@ -111,6 +114,10 @@ public class Window
     glfwSetMouseButtonCallback(glfwWindow, MouseListener::mouseButtonCallback);
     glfwSetScrollCallback(glfwWindow, MouseListener::mouseScrollCallback);
     glfwSetKeyCallback(glfwWindow, KeyListener::keyCallback);
+    glfwSetWindowSizeCallback(glfwWindow, (w, width, height) -> {
+      Window.setWidth(width);
+      Window.setHeight(height);
+    });
     
     // Make the OpenGL context current
     glfwMakeContextCurrent(glfwWindow);
@@ -124,6 +131,8 @@ public class Window
     
     glEnable(GL_BLEND);
     glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+    imGuiLayer = new ImGuiLayer(glfwWindow);
+    imGuiLayer.initImGui();
   }
   
   private void loop()
@@ -144,6 +153,7 @@ public class Window
         currentScene.update(dt);
       }
       
+      imGuiLayer.update(dt);
       glfwSwapBuffers(glfwWindow);
       
       endTime   = (float) glfwGetTime();
@@ -152,5 +162,18 @@ public class Window
     }
   }
   
+  public static float getWidth()
+  {
+    return get().width;
+  }
+  
+  public static float getHeight()
+  {
+    return get().height;
+  }
+  
+  public static void setWidth(int width) {get().width = width;}
+  
+  public static void setHeight(int height) {get().height = height;}
   
 }
