@@ -41,7 +41,8 @@ public class LevelEditorScene extends Scene
     obj1.addComponent(
       new SpriteRenderer(sprites.getSprite(0))
     );
-    this.addGameObjectToScene(obj1);
+    addGameObjectToScene(obj1);
+    activeGameObject = obj1;
   }
   
   @Override
