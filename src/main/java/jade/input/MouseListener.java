@@ -1,5 +1,10 @@
 package jade.input;
 
+import jade.Camera;
+import jade.Window;
+import org.joml.Matrix4f;
+import org.joml.Vector4f;
+
 import java.util.Arrays;
 
 import static org.lwjgl.glfw.GLFW.GLFW_PRESS;
@@ -87,6 +92,35 @@ public class MouseListener
   public static float getY()
   {
     return (float) get().posY;
+  }
+  
+  public static float findOrthoX()
+  {
+    Camera   camera      = Window.getScene().getCamera();
+    Matrix4f inverseProj = camera.getInverseProjectionMatrix();
+    Matrix4f inverseView = camera.getInverseViewMatrix();
+    
+    float currentX = getX();
+    currentX = (currentX / Window.getWidth()) * 2.0f - 1.0f;
+    Vector4f tmp = new Vector4f(currentX, 0, 0, 1);
+    tmp.mul(inverseProj).mul(inverseView);
+    currentX = tmp.x;
+    return currentX;
+  }
+  
+  public static float findOrthoY()
+  {
+    Camera   camera      = Window.getScene().getCamera();
+    Matrix4f inverseProj = camera.getInverseProjectionMatrix();
+    Matrix4f inverseView = camera.getInverseViewMatrix();
+    
+    float currentY = getY();
+    currentY = (currentY / Window.getHeight()) * 2.0f - 1.0f;
+    Vector4f tmp = new Vector4f(0, currentY, 0, 1);
+    tmp.mul(inverseProj).mul(inverseView);
+    currentY = tmp.y;
+    System.out.println(currentY);
+    return currentY;
   }
   
   public static float getDx()

@@ -22,6 +22,8 @@
             "w": 1.0
           },
           "sprite": {
+            "width": 0.0,
+            "height": 0.0,
             "texCoords": [
               {
                 "x": 1.0,

@@ -9,13 +9,18 @@ public class Camera
 {
   private Matrix4f projectionMatrix;
   private Matrix4f viewMatrix;
+  private Matrix4f inverseProjectionMatrix;
+  private Matrix4f inverseViewMatrix;
+  
   private Vector2f position;
   
   public Camera(Vector2f position)
   {
-    this.position         = position;
-    this.projectionMatrix = new Matrix4f();
-    this.viewMatrix       = new Matrix4f();
+    this.position                = position;
+    this.projectionMatrix        = new Matrix4f();
+    this.viewMatrix              = new Matrix4f();
+    this.inverseProjectionMatrix = new Matrix4f();
+    this.inverseViewMatrix       = new Matrix4f();
     
     adjustProjection();
   }
@@ -32,6 +37,7 @@ public class Camera
       0.0f,
       100.0f
     );
+    projectionMatrix.invert(inverseProjectionMatrix);
   }
   
   public Matrix4f getViewMatrix()
@@ -43,6 +49,7 @@ public class Camera
     
     viewMatrix.identity();
     viewMatrix.lookAt(cameraEye, cameraCenter, cameraUp);
+    viewMatrix.invert(inverseViewMatrix);
     
     return viewMatrix;
   }
@@ -50,5 +57,15 @@ public class Camera
   public Matrix4f getProjectionMatrix()
   {
     return projectionMatrix;
+  }
+  
+  public Matrix4f getInverseProjectionMatrix()
+  {
+    return inverseProjectionMatrix;
+  }
+  
+  public Matrix4f getInverseViewMatrix()
+  {
+    return inverseViewMatrix;
   }
 }
