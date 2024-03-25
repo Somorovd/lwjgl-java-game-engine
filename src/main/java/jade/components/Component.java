@@ -29,7 +29,7 @@ public abstract class Component
           field.setAccessible(true);
         }
         
-        boolean isTransient = Modifier.isPrivate(field.getModifiers());
+        boolean isTransient = Modifier.isTransient(field.getModifiers());
         if (isTransient)
         {
           continue;

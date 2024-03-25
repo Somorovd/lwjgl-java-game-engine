@@ -46,7 +46,7 @@
       {
         "type": "jade.components.GuiTestComponent",
         "properties": {
-          "publicInt": 56,
+          "publicInt": 33,
           "privateInt": 78,
           "privateFloat": 6.66,
           "publicBool": false,
