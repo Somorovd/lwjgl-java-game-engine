@@ -2,6 +2,7 @@ package jade.renderer;
 
 import jade.Window;
 import jade.util.AssetPool;
+import jade.util.JMath;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
 
@@ -145,5 +146,57 @@ public class DebugDraw
     }
     
     DebugDraw.lines.add(new Line2D(from, to, color, lifetime));
+  }
+  
+  // ==========================================
+  // Add box2D methods
+  // ==========================================
+  
+  public static void addBox2D(Vector2f center, Vector2f dimensions, float rotation, Vector3f color, int lifetime)
+  {
+    Vector2f min = new Vector2f(center).sub(new Vector2f(dimensions).div(2));
+    Vector2f max = new Vector2f(center).add(new Vector2f(dimensions).div(2));
+    
+    Vector2f[] verts = {
+      new Vector2f(min.x, min.y),
+      new Vector2f(min.x, max.y),
+      new Vector2f(max.x, max.y),
+      new Vector2f(max.x, min.y)
+    };
+    
+    if (rotation != 0.0f)
+    {
+      for (Vector2f v : verts)
+      {
+        JMath.rotate(v, rotation, center);
+      }
+    }
+    
+    for (int i = 0; i < 4; i++)
+    {
+      addLine2D(verts[i], verts[(i + 1) % 4], color, lifetime);
+    }
+  }
+  
+  // ==========================================
+  // Add circle2D methods
+  // ==========================================
+  public static void addCircle2D(Vector2f center, float radius, Vector3f color, int lifetime)
+  {
+    Vector2f[] points    = new Vector2f[20];
+    int        increment = 360 / points.length;
+    
+    Vector2f tmp    = new Vector2f(radius, 0);
+    Vector2f origin = new Vector2f();
+    
+    for (int i = 0; i < points.length; i++)
+    {
+      JMath.rotate(tmp, increment, origin);
+      points[i] = new Vector2f(tmp).add(center);
+    }
+    for (int i = 0; i < points.length; i++)
+    {
+      addLine2D(points[i], points[(i + 1) % points.length], color, lifetime);
+    }
   }
 }

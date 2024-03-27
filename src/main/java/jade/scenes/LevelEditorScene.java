@@ -59,6 +59,12 @@ public class LevelEditorScene extends Scene
   public void update(float dt)
   {
     levelEditorGO.update(dt);
+    DebugDraw.addCircle2D(
+      new Vector2f(400, 400),
+      300,
+      new Vector3f(1, 0, 1),
+      1
+    );
     
     MouseListener.findOrthoY();
     
