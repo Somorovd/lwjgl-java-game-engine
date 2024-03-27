@@ -12,7 +12,8 @@ public class Camera
   private Matrix4f inverseProjectionMatrix;
   private Matrix4f inverseViewMatrix;
   
-  private Vector2f position;
+  public  Vector2f position;
+  private Vector2f projectionSize = new Vector2f(32 * 40, 32 * 21);
   
   public Camera(Vector2f position)
   {
@@ -31,9 +32,9 @@ public class Camera
     // using 32x32 px tiles
     projectionMatrix.ortho(
       0.0f,
-      32.0f * 40.0f,
+      projectionSize.x,
       0.0f,
-      32.0f * 21.0f,
+      projectionSize.y,
       0.0f,
       100.0f
     );
@@ -67,5 +68,10 @@ public class Camera
   public Matrix4f getInverseViewMatrix()
   {
     return inverseViewMatrix;
+  }
+  
+  public Vector2f getProjectionSize()
+  {
+    return projectionSize;
   }
 }

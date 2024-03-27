@@ -5,14 +5,16 @@ import imgui.ImVec2;
 import jade.Camera;
 import jade.GameObject;
 import jade.Prefab;
-import jade.Transform;
-import jade.components.*;
+import jade.components.GridLines;
+import jade.components.MouseControls;
+import jade.components.Sprite;
+import jade.components.SpriteSheet;
 import jade.input.MouseListener;
 import jade.renderer.DebugDraw;
 import jade.util.AssetPool;
+import jade.util.Settings;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
-import org.joml.Vector4f;
 
 
 public class LevelEditorScene extends Scene
@@ -20,10 +22,8 @@ public class LevelEditorScene extends Scene
   private final String DECORATIONS_AND_BLOCKS = "assets/images/sheets/decorationsAndBlocks.png";
   private final String DEFAULT_SHADER         = "assets/shaders/default.glsl";
   
-  private GameObject  obj1;
   private SpriteSheet sprites;
-  
-  private MouseControls mouseControls = new MouseControls();
+  private GameObject  levelEditorGO = new GameObject("LevelEditor");
   
   public LevelEditorScene() {}
   
@@ -39,6 +39,9 @@ public class LevelEditorScene extends Scene
   @Override
   public void init()
   {
+    levelEditorGO.addComponent(new MouseControls());
+    levelEditorGO.addComponent(new GridLines());
+    
     loadResources();
     camera  = new Camera(new Vector2f());
     sprites = AssetPool.getSpritesheet(DECORATIONS_AND_BLOCKS);
@@ -50,28 +53,12 @@ public class LevelEditorScene extends Scene
       activeGameObject = gameObjects.get(0);
       return;
     }
-    
-    obj1 = new GameObject(
-      "Object 1",
-      new Transform(
-        new Vector2f(0, 0),
-        new Vector2f(256, 256)
-      ),
-      -1
-    );
-    SpriteRenderer obj1Sprite = new SpriteRenderer();
-    obj1Sprite.setColor(new Vector4f(1, 0, 0, 1));
-    obj1.addComponent(new SpriteRenderer());
-    obj1.addComponent(new GuiTestComponent());
-    
-    addGameObjectToScene(obj1);
-    activeGameObject = obj1;
   }
   
   @Override
   public void update(float dt)
   {
-    mouseControls.update(dt);
+    levelEditorGO.update(dt);
     
     MouseListener.findOrthoY();
     
@@ -116,9 +103,9 @@ public class LevelEditorScene extends Scene
       ))
       {
         GameObject go = Prefab.generateSpriteObject(
-          sprite, spriteWidth, spriteHeight
+          sprite, Settings.GRID_WIDTH, Settings.GRID_HEIGHT
         );
-        mouseControls.pickupObject(go);
+        levelEditorGO.getComponent(MouseControls.class).pickupObject(go);
       }
       ImGui.popID();
       
