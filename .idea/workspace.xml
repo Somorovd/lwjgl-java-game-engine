@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0568a008-4b3f-43bc-b9c4-6f9375b4119d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/shaders/debugLine2D.glsl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jade/renderer/DebugDraw.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jade/renderer/Line2D.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level.txt" beforeDir="false" afterPath="$PROJECT_DIR$/level.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jade/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jade/components/Component.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/components/Component.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jade/scenes/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/scenes/Scene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jade/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/Window.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jade/input/MouseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/input/MouseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jade/scenes/LevelEditorScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/scenes/LevelEditorScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

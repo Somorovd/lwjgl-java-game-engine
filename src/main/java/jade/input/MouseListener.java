@@ -119,7 +119,6 @@ public class MouseListener
     Vector4f tmp = new Vector4f(0, currentY, 0, 1);
     tmp.mul(inverseProj).mul(inverseView);
     currentY = tmp.y;
-    System.out.println(currentY);
     return currentY;
   }
   

@@ -8,8 +8,10 @@ import jade.Prefab;
 import jade.Transform;
 import jade.components.*;
 import jade.input.MouseListener;
+import jade.renderer.DebugDraw;
 import jade.util.AssetPool;
 import org.joml.Vector2f;
+import org.joml.Vector3f;
 import org.joml.Vector4f;
 
 
@@ -40,6 +42,8 @@ public class LevelEditorScene extends Scene
     loadResources();
     camera  = new Camera(new Vector2f());
     sprites = AssetPool.getSpritesheet(DECORATIONS_AND_BLOCKS);
+    
+    DebugDraw.addLine2D(new Vector2f(), new Vector2f(800, 800), new Vector3f(1, 0, 0), 120);
     
     if (levelLoaded)
     {

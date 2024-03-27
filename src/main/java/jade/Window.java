@@ -3,6 +3,7 @@ package jade;
 import jade.imgui.ImGuiLayer;
 import jade.input.KeyListener;
 import jade.input.MouseListener;
+import jade.renderer.DebugDraw;
 import jade.scenes.LevelEditorScene;
 import jade.scenes.LevelScene;
 import jade.scenes.Scene;
@@ -149,11 +150,14 @@ public class Window
     {
       glfwPollEvents();
       
+      DebugDraw.beginFrame();
+      
       glClearColor(r, g, b, a);
       glClear(GL_COLOR_BUFFER_BIT);
       
       if (dt >= 0)
       {
+        DebugDraw.draw();
         currentScene.update(dt);
       }
       
