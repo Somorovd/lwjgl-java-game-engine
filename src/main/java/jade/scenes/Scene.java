@@ -1,8 +1,10 @@
-package jade;
+package jade.scenes;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import imgui.ImGui;
+import jade.Camera;
+import jade.GameObject;
 import jade.components.Component;
 import jade.renderer.Renderer;
 import jade.serialization.ComponentDeserializer;
