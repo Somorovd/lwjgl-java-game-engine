@@ -27,7 +27,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -84,7 +83,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -141,7 +139,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -198,7 +195,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -255,7 +251,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -312,7 +307,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -369,7 +363,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -426,7 +419,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -483,7 +475,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -540,7 +531,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -597,7 +587,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -654,7 +643,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -711,7 +699,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -768,7 +755,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -825,7 +811,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -882,7 +867,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -939,7 +923,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -996,7 +979,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -1053,7 +1035,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -1110,7 +1091,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -1167,7 +1147,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -1224,7 +1203,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -1281,7 +1259,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -1338,7 +1315,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -1395,7 +1371,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -1452,7 +1427,6 @@
             "height": 16.0,
             "texture": {
               "filepath": "assets/images/sheets/decorationsAndBlocks.png",
-              "texId": 2,
               "width": 112,
               "height": 192
             },
@@ -1476,6 +1450,902 @@
             ]
           },
           "uid": 27
+        }
+      }
+    ],
+    "zIndex": 0
+  },
+  {
+    "uid": 27,
+    "transform": {
+      "position": {
+        "x": 896.0,
+        "y": 512.0
+      },
+      "scale": {
+        "x": 32.0,
+        "y": 32.0
+      }
+    },
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "jade.components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/sheets/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.2857143,
+                "y": 1.0833334
+              },
+              {
+                "x": 0.2857143,
+                "y": 1.0
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.0833334
+              }
+            ]
+          },
+          "uid": 30
+        }
+      }
+    ],
+    "zIndex": 0
+  },
+  {
+    "uid": 28,
+    "transform": {
+      "position": {
+        "x": 928.0,
+        "y": 512.0
+      },
+      "scale": {
+        "x": 32.0,
+        "y": 32.0
+      }
+    },
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "jade.components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/sheets/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.14285715,
+                "y": 1.0833334
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0833334
+              }
+            ]
+          },
+          "uid": 31
+        }
+      }
+    ],
+    "zIndex": 0
+  },
+  {
+    "uid": 29,
+    "transform": {
+      "position": {
+        "x": 960.0,
+        "y": 512.0
+      },
+      "scale": {
+        "x": 32.0,
+        "y": 32.0
+      }
+    },
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "jade.components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/sheets/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.14285715,
+                "y": 1.0833334
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0833334
+              }
+            ]
+          },
+          "uid": 32
+        }
+      }
+    ],
+    "zIndex": 0
+  },
+  {
+    "uid": 30,
+    "transform": {
+      "position": {
+        "x": 992.0,
+        "y": 512.0
+      },
+      "scale": {
+        "x": 32.0,
+        "y": 32.0
+      }
+    },
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "jade.components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/sheets/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.14285715,
+                "y": 1.0833334
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0833334
+              }
+            ]
+          },
+          "uid": 33
+        }
+      }
+    ],
+    "zIndex": 0
+  },
+  {
+    "uid": 31,
+    "transform": {
+      "position": {
+        "x": 896.0,
+        "y": 480.0
+      },
+      "scale": {
+        "x": 32.0,
+        "y": 32.0
+      }
+    },
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "jade.components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/sheets/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.14285715,
+                "y": 1.0833334
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0833334
+              }
+            ]
+          },
+          "uid": 34
+        }
+      }
+    ],
+    "zIndex": 0
+  },
+  {
+    "uid": 32,
+    "transform": {
+      "position": {
+        "x": 928.0,
+        "y": 480.0
+      },
+      "scale": {
+        "x": 32.0,
+        "y": 32.0
+      }
+    },
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "jade.components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/sheets/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.14285715,
+                "y": 1.0833334
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0833334
+              }
+            ]
+          },
+          "uid": 35
+        }
+      }
+    ],
+    "zIndex": 0
+  },
+  {
+    "uid": 33,
+    "transform": {
+      "position": {
+        "x": 960.0,
+        "y": 480.0
+      },
+      "scale": {
+        "x": 32.0,
+        "y": 32.0
+      }
+    },
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "jade.components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/sheets/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.14285715,
+                "y": 1.0833334
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0833334
+              }
+            ]
+          },
+          "uid": 36
+        }
+      }
+    ],
+    "zIndex": 0
+  },
+  {
+    "uid": 34,
+    "transform": {
+      "position": {
+        "x": 992.0,
+        "y": 480.0
+      },
+      "scale": {
+        "x": 32.0,
+        "y": 32.0
+      }
+    },
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "jade.components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/sheets/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.14285715,
+                "y": 1.0833334
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0833334
+              }
+            ]
+          },
+          "uid": 37
+        }
+      }
+    ],
+    "zIndex": 0
+  },
+  {
+    "uid": 35,
+    "transform": {
+      "position": {
+        "x": 896.0,
+        "y": 448.0
+      },
+      "scale": {
+        "x": 32.0,
+        "y": 32.0
+      }
+    },
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "jade.components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/sheets/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.14285715,
+                "y": 1.0833334
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0833334
+              }
+            ]
+          },
+          "uid": 38
+        }
+      }
+    ],
+    "zIndex": 0
+  },
+  {
+    "uid": 36,
+    "transform": {
+      "position": {
+        "x": 928.0,
+        "y": 448.0
+      },
+      "scale": {
+        "x": 32.0,
+        "y": 32.0
+      }
+    },
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "jade.components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/sheets/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.14285715,
+                "y": 1.0833334
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0833334
+              }
+            ]
+          },
+          "uid": 39
+        }
+      }
+    ],
+    "zIndex": 0
+  },
+  {
+    "uid": 37,
+    "transform": {
+      "position": {
+        "x": 960.0,
+        "y": 448.0
+      },
+      "scale": {
+        "x": 32.0,
+        "y": 32.0
+      }
+    },
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "jade.components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/sheets/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.14285715,
+                "y": 1.0833334
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0833334
+              }
+            ]
+          },
+          "uid": 40
+        }
+      }
+    ],
+    "zIndex": 0
+  },
+  {
+    "uid": 38,
+    "transform": {
+      "position": {
+        "x": 992.0,
+        "y": 448.0
+      },
+      "scale": {
+        "x": 32.0,
+        "y": 32.0
+      }
+    },
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "jade.components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/sheets/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.14285715,
+                "y": 1.0833334
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0833334
+              }
+            ]
+          },
+          "uid": 41
+        }
+      }
+    ],
+    "zIndex": 0
+  },
+  {
+    "uid": 39,
+    "transform": {
+      "position": {
+        "x": 896.0,
+        "y": 416.0
+      },
+      "scale": {
+        "x": 32.0,
+        "y": 32.0
+      }
+    },
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "jade.components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/sheets/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.2857143,
+                "y": 1.9166666
+              },
+              {
+                "x": 0.2857143,
+                "y": 1.8333334
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.8333334
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.9166666
+              }
+            ]
+          },
+          "uid": 42
+        }
+      }
+    ],
+    "zIndex": 0
+  },
+  {
+    "uid": 40,
+    "transform": {
+      "position": {
+        "x": 928.0,
+        "y": 416.0
+      },
+      "scale": {
+        "x": 32.0,
+        "y": 32.0
+      }
+    },
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "jade.components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/sheets/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.2857143,
+                "y": 1.9166666
+              },
+              {
+                "x": 0.2857143,
+                "y": 1.8333334
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.8333334
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.9166666
+              }
+            ]
+          },
+          "uid": 43
+        }
+      }
+    ],
+    "zIndex": 0
+  },
+  {
+    "uid": 41,
+    "transform": {
+      "position": {
+        "x": 960.0,
+        "y": 416.0
+      },
+      "scale": {
+        "x": 32.0,
+        "y": 32.0
+      }
+    },
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "jade.components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/sheets/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.2857143,
+                "y": 1.9166666
+              },
+              {
+                "x": 0.2857143,
+                "y": 1.8333334
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.8333334
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.9166666
+              }
+            ]
+          },
+          "uid": 44
+        }
+      }
+    ],
+    "zIndex": 0
+  },
+  {
+    "uid": 42,
+    "transform": {
+      "position": {
+        "x": 992.0,
+        "y": 416.0
+      },
+      "scale": {
+        "x": 32.0,
+        "y": 32.0
+      }
+    },
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "jade.components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/sheets/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.2857143,
+                "y": 1.9166666
+              },
+              {
+                "x": 0.2857143,
+                "y": 1.8333334
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.8333334
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.9166666
+              }
+            ]
+          },
+          "uid": 45
         }
       }
     ],

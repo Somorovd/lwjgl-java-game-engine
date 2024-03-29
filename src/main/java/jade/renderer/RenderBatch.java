@@ -206,6 +206,8 @@ public class RenderBatch implements Comparable<RenderBatch>
     Texture        texture   = spr.getTexture();
     Vector2f[]     texCoords = spr.getTexCoords();
     
+    int texId = textures.indexOf(texture) + 1;
+    
     // Find offset within array (4 vertices per sprite)
     int offset = index * 4 * VERTEX_SIZE;
     
@@ -216,6 +218,7 @@ public class RenderBatch implements Comparable<RenderBatch>
       {0.0f, 0.0f},
       {0.0f, 1.0f}
     };
+    
     for (int i = 0; i < 4; i++)
     {
       // position
@@ -234,8 +237,7 @@ public class RenderBatch implements Comparable<RenderBatch>
       
       // texture id
       // + 1 because tex 0 is reserved for no texture
-      vertices[offset + 8] = Math.max(0, textures.indexOf(texture) + 1);
-      
+      vertices[offset + 8] = texId;
       
       offset += VERTEX_SIZE;
     }

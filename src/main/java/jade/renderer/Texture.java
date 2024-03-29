@@ -7,16 +7,37 @@ import java.nio.IntBuffer;
 
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.stb.STBImage.*;
+import static org.lwjgl.system.MemoryUtil.NULL;
 
 
 public class Texture
 {
   private String filepath;
-  private int    texId;
   private int    width;
   private int    height;
   
-  public Texture() {}
+  private transient int texId;
+  
+  public Texture()
+  {
+    texId  = -1;
+    width  = -1;
+    height = -1;
+  }
+  
+  public Texture(int width, int height)
+  {
+    // intended to only be used for framebuffers
+    
+    this.filepath = "Generated";
+    
+    // Generate texture on GPU
+    texId = glGenTextures();
+    glBindTexture(GL_TEXTURE_2D, texId);
+    
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
+  }
+  
   
   public void init(String filepath)
   {
@@ -85,6 +106,23 @@ public class Texture
   public int getId()
   {
     return texId;
+  }
+  
+  public String getFilepath()
+  {
+    return filepath;
+  }
+  
+  @Override
+  public boolean equals(Object o)
+  {
+    if (o == null) {return false;}
+    if (!(o instanceof Texture oTex)) {return false;}
+    return (
+      oTex.getWidth() == this.width &&
+        oTex.getHeight() == this.height &&
+        oTex.getId() == this.texId &&
+        oTex.getFilepath().equals(this.filepath));
   }
   
 }

@@ -4,6 +4,7 @@ import jade.imgui.ImGuiLayer;
 import jade.input.KeyListener;
 import jade.input.MouseListener;
 import jade.renderer.DebugDraw;
+import jade.renderer.FrameBuffer;
 import jade.scenes.LevelEditorScene;
 import jade.scenes.LevelScene;
 import jade.scenes.Scene;
@@ -29,8 +30,9 @@ public class Window
   private        int    height;
   private        String title;
   
-  private long       glfwWindow;
-  private ImGuiLayer imGuiLayer;
+  private long        glfwWindow;
+  private ImGuiLayer  imGuiLayer;
+  private FrameBuffer frameBuffer;
   
   private Window()
   {
@@ -138,6 +140,8 @@ public class Window
     glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
     imGuiLayer = new ImGuiLayer(glfwWindow);
     imGuiLayer.initImGui();
+    
+    frameBuffer = new FrameBuffer(1920, 1080);
   }
   
   private void loop()
@@ -154,12 +158,14 @@ public class Window
       
       glClearColor(r, g, b, a);
       glClear(GL_COLOR_BUFFER_BIT);
-      
+
+//      frameBuffer.bind();
       if (dt >= 0)
       {
         DebugDraw.draw();
         currentScene.update(dt);
       }
+      frameBuffer.unbind();
       
       imGuiLayer.update(dt, currentScene);
       glfwSwapBuffers(glfwWindow);

@@ -5,10 +5,7 @@ import imgui.ImVec2;
 import jade.Camera;
 import jade.GameObject;
 import jade.Prefab;
-import jade.components.GridLines;
-import jade.components.MouseControls;
-import jade.components.Sprite;
-import jade.components.SpriteSheet;
+import jade.components.*;
 import jade.input.MouseListener;
 import jade.renderer.DebugDraw;
 import jade.util.AssetPool;
@@ -34,6 +31,19 @@ public class LevelEditorScene extends Scene
       DECORATIONS_AND_BLOCKS,
       new SpriteSheet(AssetPool.getTexture(DECORATIONS_AND_BLOCKS), 16, 16, 81, 0)
     );
+    
+    for (GameObject go : gameObjects)
+    {
+      SpriteRenderer spr = go.getComponent(SpriteRenderer.class);
+      if (spr != null)
+      {
+        if (spr.getTexture() != null)
+        {
+          // instead of having many textures, make sure they are all the same
+          spr.setTexture(AssetPool.getTexture(spr.getTexture().getFilepath()));
+        }
+      }
+    }
   }
   
   @Override
@@ -50,7 +60,11 @@ public class LevelEditorScene extends Scene
     
     if (levelLoaded)
     {
-      activeGameObject = gameObjects.get(0);
+      if (gameObjects.size() > 0)
+      {
+        activeGameObject = gameObjects.get(0);
+        
+      }
       return;
     }
   }
