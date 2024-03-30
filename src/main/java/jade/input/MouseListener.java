@@ -3,6 +3,7 @@ package jade.input;
 import jade.Camera;
 import jade.Window;
 import org.joml.Matrix4f;
+import org.joml.Vector2f;
 import org.joml.Vector4f;
 
 import java.util.Arrays;
@@ -13,12 +14,19 @@ import static org.lwjgl.glfw.GLFW.GLFW_RELEASE;
 
 public class MouseListener
 {
+  // could just be a static class, no need for singleton
   private static MouseListener instance;
   
-  private double scrollX, scrollY;
-  private double posX, posY, lastY, lastX;
-  private boolean mouseButtonPressed[] = new boolean[3];
-  private boolean isDragging;
+  private double   scrollX;
+  private double   scrollY;
+  private double   posX;
+  private double   posY;
+  private double   lastX;
+  private double   lastY;
+  private boolean  mouseButtonPressed[] = new boolean[3];
+  private boolean  isDragging;
+  private Vector2f gameViewportPos      = new Vector2f();
+  private Vector2f gameViewportSize     = new Vector2f();
   
   private MouseListener()
   {
@@ -100,10 +108,14 @@ public class MouseListener
     Matrix4f inverseProj = camera.getInverseProjectionMatrix();
     Matrix4f inverseView = camera.getInverseViewMatrix();
     
-    float currentX = getX();
-    currentX = (currentX / Window.getWidth()) * 2.0f - 1.0f;
-    Vector4f tmp = new Vector4f(currentX, 0, 0, 1);
-    tmp.mul(inverseProj).mul(inverseView);
+    float currentX = getX() - get().gameViewportPos.x;
+    currentX = (currentX / get().gameViewportSize.x) * 2.0f - 1.0f;
+    
+    Vector4f tmp      = new Vector4f(currentX, 0, 0, 1);
+    Matrix4f viewProj = new Matrix4f();
+    inverseView.mul(inverseProj, viewProj);
+    tmp.mul(viewProj);
+    
     currentX = tmp.x;
     return currentX;
   }
@@ -114,10 +126,15 @@ public class MouseListener
     Matrix4f inverseProj = camera.getInverseProjectionMatrix();
     Matrix4f inverseView = camera.getInverseViewMatrix();
     
-    float currentY = Window.getHeight() - getY();
-    currentY = (currentY / Window.getHeight()) * 2.0f - 1.0f;
-    Vector4f tmp = new Vector4f(0, currentY, 0, 1);
-    tmp.mul(inverseProj).mul(inverseView);
+    float currentY = getY() - get().gameViewportPos.y;
+    // imgui and opengl y is flipped so use (-)
+    currentY = -((currentY / get().gameViewportSize.y) * 2.0f - 1.0f);
+    
+    Vector4f tmp      = new Vector4f(0, currentY, 0, 1);
+    Matrix4f viewProj = new Matrix4f();
+    inverseView.mul(inverseProj, viewProj);
+    tmp.mul(viewProj);
+    
     currentY = tmp.y;
     return currentY;
   }
@@ -158,4 +175,18 @@ public class MouseListener
     }
     return false;
   }
+  
+  public static void setGameViewportPos(Vector2f gameViewportPos)
+  {
+    get().gameViewportPos.set(gameViewportPos);
+  }
+  
+  public static void setGetGameViewportSize(Vector2f getGameViewportSize)
+  {
+    get().gameViewportSize.set(getGameViewportSize);
+  }
+  
+  
 }
+
+

@@ -10,6 +10,7 @@ import imgui.flag.*;
 import imgui.gl3.ImGuiImplGl3;
 import imgui.type.ImBoolean;
 import jade.Window;
+import jade.editor.GameViewWindow;
 import jade.input.KeyListener;
 import jade.input.MouseListener;
 import jade.scenes.Scene;
@@ -140,7 +141,7 @@ public class ImGuiLayer
       }
       
       // if imgui does not need the mouse capture, send to our mouse listener
-      if (!io.getWantCaptureMouse())
+      if (!io.getWantCaptureMouse() || !GameViewWindow.getWantCaptureMouse())
       {
         MouseListener.mouseButtonCallback(w, button, action, mods);
       }
@@ -205,6 +206,7 @@ public class ImGuiLayer
     setupDockSpace();
     currentScene.sceneImgui();
     ImGui.showDemoWindow();
+    GameViewWindow.imgui();
     ImGui.end(); // docking
     ImGui.render();
     endFrame();

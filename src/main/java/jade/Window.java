@@ -74,6 +74,7 @@ public class Window
     return currentScene;
   }
   
+  
   public void run()
   {
     System.out.println("Hello LWJGL " + Version.getVersion() + "!");
@@ -142,6 +143,7 @@ public class Window
     imGuiLayer.initImGui();
     
     frameBuffer = new FrameBuffer(1920, 1080);
+    glViewport(0, 0, 1920, 1080);
   }
   
   private void loop()
@@ -156,10 +158,12 @@ public class Window
       
       DebugDraw.beginFrame();
       
+      // framebuffer for the viewport
+      frameBuffer.bind();
+      
       glClearColor(r, g, b, a);
       glClear(GL_COLOR_BUFFER_BIT);
-
-//      frameBuffer.bind();
+      
       if (dt >= 0)
       {
         DebugDraw.draw();
@@ -192,4 +196,10 @@ public class Window
   
   public static void setHeight(int height) {get().height = height;}
   
+  public static FrameBuffer getFramebuffer() {return get().frameBuffer;}
+  
+  public static float getTargetAspectRatio()
+  {
+    return 16.0f / 9.0f;
+  }
 }
