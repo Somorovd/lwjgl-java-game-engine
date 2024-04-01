@@ -4,7 +4,6 @@ import jade.Camera;
 import jade.Transform;
 import jade.Window;
 import jade.components.SpriteRenderer;
-import jade.util.AssetPool;
 import org.joml.Vector2f;
 import org.joml.Vector4f;
 
@@ -32,12 +31,14 @@ public class RenderBatch implements Comparable<RenderBatch>
   private final int COLOR_SIZE        = 4;
   private final int TEX_COORD_SIZE    = 2;
   private final int TEX_ID_SIZE       = 1;
+  private final int ENTITY_ID_SIZE    = 1;
   private final int POS_OFFSET        = 0;
   private final int COLOR_OFFSET      = 2 * Float.BYTES;
   private final int TEX_COORD_OFFSET  = 6 * Float.BYTES;
   private final int TEX_ID_OFFSET     = 8 * Float.BYTES;
-  private final int VERTEX_SIZE       = 9;
-  private final int VERTEX_SIZE_BYTES = 9 * Float.BYTES;
+  private final int ENTITY_ID_OFFSET  = 9 * Float.BYTES;
+  private final int VERTEX_SIZE       = 10;
+  private final int VERTEX_SIZE_BYTES = 10 * Float.BYTES;
   
   private SpriteRenderer[] sprites;
   private int              numSprites;
@@ -46,7 +47,6 @@ public class RenderBatch implements Comparable<RenderBatch>
   private int              vaoId;
   private int              vboId;
   private int              maxBatchSize;
-  private Shader           shader;
   private List<Texture>    textures;
   private int[]            texSlots = {0, 1, 2, 3, 4, 5, 6, 7};
   private int              zIndex;
@@ -60,9 +60,6 @@ public class RenderBatch implements Comparable<RenderBatch>
     this.sprites      = new SpriteRenderer[maxBatchSize];
     this.vertices     = new float[maxBatchSize * 4 * VERTEX_SIZE];
     this.textures     = new ArrayList<>();
-    this.shader       = AssetPool.getShader("assets/shaders/default.glsl");
-    
-    shader.compile();
   }
   
   public void start()
@@ -94,6 +91,9 @@ public class RenderBatch implements Comparable<RenderBatch>
     
     glVertexAttribPointer(3, TEX_ID_SIZE, GL_FLOAT, false, VERTEX_SIZE_BYTES, TEX_ID_OFFSET);
     glEnableVertexAttribArray(3);
+    
+    glVertexAttribPointer(4, ENTITY_ID_SIZE, GL_FLOAT, false, VERTEX_SIZE_BYTES, ENTITY_ID_OFFSET);
+    glEnableVertexAttribArray(4);
   }
   
   public void render()
@@ -117,6 +117,7 @@ public class RenderBatch implements Comparable<RenderBatch>
       glBufferSubData(GL_ARRAY_BUFFER, 0, vertices);
     }
     
+    Shader shader = Renderer.getCurrentShader();
     shader.use();
     
     Camera camera = Window.getScene().getCamera();
@@ -238,6 +239,10 @@ public class RenderBatch implements Comparable<RenderBatch>
       // texture id
       // + 1 because tex 0 is reserved for no texture
       vertices[offset + 8] = texId;
+      
+      // entity id
+      // +1 because 0 reserved for no object
+      vertices[offset + 9] = spr.gameObject.getUid() + 1;
       
       offset += VERTEX_SIZE;
     }

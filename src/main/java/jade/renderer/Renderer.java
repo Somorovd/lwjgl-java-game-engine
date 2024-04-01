@@ -14,6 +14,8 @@ public class Renderer
   
   private List<RenderBatch> batches;
   
+  private static Shader currentShader;
+  
   public Renderer()
   {
     batches = new ArrayList<>();
@@ -62,9 +64,20 @@ public class Renderer
   
   public void render()
   {
+    currentShader.use();
     for (RenderBatch batch : batches)
     {
       batch.render();
     }
+  }
+  
+  public static void bindShader(Shader shader)
+  {
+    currentShader = shader;
+  }
+  
+  public static Shader getCurrentShader()
+  {
+    return currentShader;
   }
 }

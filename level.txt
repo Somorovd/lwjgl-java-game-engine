@@ -3078,5 +3078,117 @@
       }
     ],
     "zIndex": 0
+  },
+  {
+    "uid": 56,
+    "transform": {
+      "position": {
+        "x": 192.0,
+        "y": 416.0
+      },
+      "scale": {
+        "x": 32.0,
+        "y": 32.0
+      }
+    },
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "jade.components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/sheets/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.5714286,
+                "y": 1.5833334
+              },
+              {
+                "x": 0.5714286,
+                "y": 1.5
+              },
+              {
+                "x": 0.42857143,
+                "y": 1.5
+              },
+              {
+                "x": 0.42857143,
+                "y": 1.5833334
+              }
+            ]
+          },
+          "uid": 75
+        }
+      }
+    ],
+    "zIndex": 0
+  },
+  {
+    "uid": 57,
+    "transform": {
+      "position": {
+        "x": 512.0,
+        "y": 160.0
+      },
+      "scale": {
+        "x": 32.0,
+        "y": 32.0
+      }
+    },
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "jade.components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/sheets/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.5714286,
+                "y": 1.8333334
+              },
+              {
+                "x": 0.5714286,
+                "y": 1.75
+              },
+              {
+                "x": 0.42857143,
+                "y": 1.75
+              },
+              {
+                "x": 0.42857143,
+                "y": 1.8333334
+              }
+            ]
+          },
+          "uid": 76
+        }
+      }
+    ],
+    "zIndex": 0
   }
 ]
