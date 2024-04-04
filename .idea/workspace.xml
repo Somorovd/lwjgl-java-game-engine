@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0568a008-4b3f-43bc-b9c4-6f9375b4119d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/shaders/pickingShader.glsl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jade/renderer/PickingTexture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jade/editor/PropertiesWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgui.ini" beforeDir="false" afterPath="$PROJECT_DIR$/imgui.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/level.txt" beforeDir="false" afterPath="$PROJECT_DIR$/level.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jade/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/Window.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jade/input/MouseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/input/MouseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jade/renderer/RenderBatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/renderer/RenderBatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jade/renderer/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/renderer/Renderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jade/editor/GameViewWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/editor/GameViewWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jade/imgui/ImGuiLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/imgui/ImGuiLayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jade/scenes/LevelEditorScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/scenes/LevelEditorScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jade/scenes/LevelScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/scenes/LevelScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jade/scenes/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/scenes/Scene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

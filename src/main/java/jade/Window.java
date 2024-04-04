@@ -140,11 +140,13 @@ public class Window
     
     glEnable(GL_BLEND);
     glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
-    imGuiLayer = new ImGuiLayer(glfwWindow);
-    imGuiLayer.initImGui();
     
     frameBuffer    = new FrameBuffer(1920, 1080);
     pickingTexture = new PickingTexture(1920, 1080);
+    
+    imGuiLayer = new ImGuiLayer(glfwWindow, pickingTexture);
+    imGuiLayer.initImGui();
+    
     glViewport(0, 0, 1920, 1080);
   }
   
@@ -174,13 +176,6 @@ public class Window
       
       pickingTexture.disableWriting();
       glEnable(GL_BLEND);
-      
-      if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT))
-      {
-        int x = (int) MouseListener.getScreenX();
-        int y = (int) MouseListener.getScreenY();
-        System.out.println(pickingTexture.readPixel(x, y));
-      }
       
       // Render pass 2. Render actual game
       DebugDraw.beginFrame();

@@ -2,7 +2,6 @@ package jade.scenes;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import imgui.ImGui;
 import jade.Camera;
 import jade.GameObject;
 import jade.components.Component;
@@ -16,16 +15,16 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 public abstract class Scene
 {
-  public    boolean          isRunning        = false;
-  protected Renderer         renderer         = new Renderer();
+  public    boolean          isRunning   = false;
+  protected Renderer         renderer    = new Renderer();
   protected Camera           camera;
-  protected List<GameObject> gameObjects      = new ArrayList<>();
-  protected GameObject       activeGameObject = null;
-  protected boolean          levelLoaded      = false;
+  protected List<GameObject> gameObjects = new ArrayList<>();
+  protected boolean          levelLoaded = false;
   
   protected Gson gson = new GsonBuilder()
     .setPrettyPrinting()
@@ -57,16 +56,12 @@ public abstract class Scene
     }
   }
   
-  public void sceneImgui()
+  public GameObject getGameObject(int id)
   {
-    if (activeGameObject != null)
-    {
-      ImGui.begin("Inspector");
-      activeGameObject.imgui();
-      ImGui.end();
-    }
-    
-    imgui();
+    Optional<GameObject> res = gameObjects.stream()
+                                          .filter(go -> go.getUid() == id)
+                                          .findFirst();
+    return res.orElse(null);
   }
   
   public void saveExit()

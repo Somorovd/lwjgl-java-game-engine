@@ -11,8 +11,10 @@ import imgui.gl3.ImGuiImplGl3;
 import imgui.type.ImBoolean;
 import jade.Window;
 import jade.editor.GameViewWindow;
+import jade.editor.PropertiesWindow;
 import jade.input.KeyListener;
 import jade.input.MouseListener;
+import jade.renderer.PickingTexture;
 import jade.scenes.Scene;
 
 import static org.lwjgl.glfw.GLFW.*;
@@ -32,9 +34,14 @@ public class ImGuiLayer
   // LWJGL3 renderer (SHOULD be initialized)
   private final ImGuiImplGl3 imGuiGl3 = new ImGuiImplGl3();
   
-  public ImGuiLayer(long glfwWindow)
+  private GameViewWindow   gameViewWindow;
+  private PropertiesWindow propertiesWindow;
+  
+  public ImGuiLayer(long glfwWindow, PickingTexture pickingTexture)
   {
-    this.glfwWindow = glfwWindow;
+    this.glfwWindow       = glfwWindow;
+    this.gameViewWindow   = new GameViewWindow();
+    this.propertiesWindow = new PropertiesWindow(pickingTexture);
   }
   
   public void initImGui()
@@ -141,7 +148,7 @@ public class ImGuiLayer
       }
       
       // if imgui does not need the mouse capture, send to our mouse listener
-      if (!io.getWantCaptureMouse() || !GameViewWindow.getWantCaptureMouse())
+      if (!io.getWantCaptureMouse() || gameViewWindow.getWantCaptureMouse())
       {
         MouseListener.mouseButtonCallback(w, button, action, mods);
       }
@@ -204,9 +211,11 @@ public class ImGuiLayer
     startFrame(dt);
     ImGui.newFrame();
     setupDockSpace();
-    currentScene.sceneImgui();
+    currentScene.imgui();
     ImGui.showDemoWindow();
-    GameViewWindow.imgui();
+    gameViewWindow.imgui();
+    propertiesWindow.update(dt, currentScene);
+    propertiesWindow.imgui();
     ImGui.end(); // docking
     ImGui.render();
     endFrame();

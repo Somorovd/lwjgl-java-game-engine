@@ -57,16 +57,6 @@ public class LevelEditorScene extends Scene
     sprites = AssetPool.getSpritesheet(DECORATIONS_AND_BLOCKS);
     
     DebugDraw.addLine2D(new Vector2f(), new Vector2f(800, 800), new Vector3f(1, 0, 0), 120);
-    
-    if (levelLoaded)
-    {
-      if (gameObjects.size() > 0)
-      {
-        activeGameObject = gameObjects.get(0);
-        
-      }
-      return;
-    }
   }
   
   @Override
