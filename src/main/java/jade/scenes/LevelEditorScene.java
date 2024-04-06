@@ -49,11 +49,12 @@ public class LevelEditorScene extends Scene
   @Override
   public void init()
   {
+    camera = new Camera(new Vector2f());
     levelEditorGO.addComponent(new MouseControls());
     levelEditorGO.addComponent(new GridLines());
+    levelEditorGO.addComponent(new EditorCamera(camera));
     
     loadResources();
-    camera  = new Camera(new Vector2f());
     sprites = AssetPool.getSpritesheet(DECORATIONS_AND_BLOCKS);
     
     DebugDraw.addLine2D(new Vector2f(), new Vector2f(800, 800), new Vector3f(1, 0, 0), 120);

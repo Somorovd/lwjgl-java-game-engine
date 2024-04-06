@@ -1,5 +1,6 @@
 package jade.components;
 
+import jade.Camera;
 import jade.Window;
 import jade.renderer.DebugDraw;
 import jade.util.Settings;
@@ -12,16 +13,18 @@ public class GridLines extends Component
   @Override
   public void update(float dt)
   {
-    Vector2f cameraPos      = Window.getScene().getCamera().position;
-    Vector2f projectionSize = Window.getScene().getCamera().getProjectionSize();
+    Camera   camera         = Window.getScene().getCamera();
+    Vector2f cameraPos      = camera.position;
+    float    zoom           = camera.getZoom();
+    Vector2f projectionSize = camera.getProjectionSize();
     Vector3f color          = new Vector3f(0.8f);
     
     int firstX   = ((int) (cameraPos.x / Settings.GRID_WIDTH) * Settings.GRID_WIDTH);
     int firstY   = ((int) (cameraPos.y / Settings.GRID_HEIGHT) * Settings.GRID_HEIGHT);
-    int numV     = (int) (projectionSize.x / Settings.GRID_WIDTH);
-    int numH     = (int) (projectionSize.y / Settings.GRID_HEIGHT);
-    int w        = (int) projectionSize.x;
-    int h        = (int) projectionSize.y;
+    int numV     = (int) (projectionSize.x * zoom / Settings.GRID_WIDTH);
+    int numH     = (int) (projectionSize.y * zoom / Settings.GRID_HEIGHT);
+    int w        = (int) (projectionSize.x * zoom);
+    int h        = (int) (projectionSize.y * zoom);
     int maxLines = Math.max(numH, numV);
     
     for (int i = 0; i < maxLines; i++)
